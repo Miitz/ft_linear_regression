@@ -89,7 +89,7 @@ class ft_linear_regression:
             self.theta0, self.theta1 = self.gradient_descent()
             if (i % 1000) == 0 and ep:
                 print(f"{i} / {epochs} -- theta1={self.theta1} theta0={self.theta0}")
-            elif(i % 1000) == 0:
+            elif (i % 1000) == 0:
                 print("Processing thetas...")
 
         self.theta1 = (self.max_price - self.min_price) * self.theta1 / (self.max_km - self.min_km)
