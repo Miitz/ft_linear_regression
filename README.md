@@ -11,7 +11,7 @@ In this project we are free to use whatever language we want.
 ~~Jupiter Notebook~~ (*Work in progress*) &#8594; ~~[`ft_linear_regression.ipynb`](/ft_linear_regression.ipynb)~~
 
 ### Subject
-- [ft_linear_regression_subject](/subject/en.subject)
+- [ft_linear_regression_subject](/subject/en.subject.pdf)
 
 ### Usage
 
