@@ -10,15 +10,21 @@ except:
 flag = True
 
 while flag:
-    mileage = input("Please enter mileage: ")
     try:
-        if int(mileage) < 0:
-            raise Exception()
+        mileage = input("Please enter mileage: ")
+        if not mileage.lstrip("-").isnumeric():
+            raise ValueError("Mileage must be an integer")
+        if int(mileage) < 0 or int(mileage) > 2147483647:
+            raise ValueError("Mileage value is less than zero or higher than maxint")
         prediction = theta0 + theta1 * int(mileage)
+        if prediction < 0:
+            raise Exception("Prediction is less than 0.\n"
+                            "If you're trying to sell this car you should think about demolish it.\n"
+                            "If you're trying to buy this car ... the owner should pay you.")
         print(f"The predicted price is: {round(prediction, 0)}")
-        if input("Continue? (yes/no): ") == "no":
+        if input("Continue? (yes/no): ") != "yes":
             flag = False
-    except:
-        print("Error: please verify your input!")
-        print("You should enter an integer as mileage.")
+    except Exception as e:
+        print(e)
         sys.exit(1)
+
